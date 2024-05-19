@@ -24,3 +24,25 @@ def calculate_md5(file_path):
         print("Kemi hasur probleme gjatë leximit të file-s")
         sys.exit(1)
 
+def calculate_sha256(file_path):
+
+    sha256_hash = hashlib.sha256()
+
+    try:
+        with open(file_path, 'rb') as file:
+            for chunk in iter(lambda: file.read(4096), b''):
+                sha256_hash.update(chunk)
+
+        sha256_digest = sha256_hash.hexdigest()
+
+        return sha256_digest
+    except FileNotFoundError:
+        print(f"Error: Path-i për file-n '{file_path}' që keni shënuar nuk u gjet.")
+        sys.exit(1)
+    except PermissionError:
+        print(f"Error: Nuk keni të drejtë për tu qasur në këtë file: '{file_path}'.")
+        sys.exit(1)
+    except:
+        print("Kemi hasur probleme gjatë leximit të file-s")
+        sys.exit(1)
+
