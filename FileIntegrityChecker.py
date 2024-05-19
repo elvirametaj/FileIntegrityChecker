@@ -46,3 +46,13 @@ def calculate_sha256(file_path):
         print("Kemi hasur probleme gjatë leximit të file-s")
         sys.exit(1)
 
+def print_banner(file_name):
+    banner = f"""
+====================================
+File Integrity Checker
+====================================
+Kalkulimet për: {file_name}
+====================================
+"""
+    print(banner)
+
