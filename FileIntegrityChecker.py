@@ -56,3 +56,18 @@ Kalkulimet për: {file_name}
 """
     print(banner)
 
+def print_help():
+    help_message = """
+    
+Përdorimi: python <path_1> <path_2>
+
+Argumentet:
+  path_1    Path-i për skriptin për të ekzekutuar.
+  path_2    Path-i për file-n për të cilin do të llogariten shenjat MD5 dhe SHA-256.
+
+Shembull:
+  python ./.venv/FileIntegrityChecker.py ./.venv/file.txt
+  
+"""
+    print(help_message)
+
