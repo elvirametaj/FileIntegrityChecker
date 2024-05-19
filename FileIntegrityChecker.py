@@ -82,3 +82,12 @@ file_path = arguments[0]
 file_name = file_path.split("/")[-1]
 
 print_banner(file_name) 
+
+try:
+    md5_hash = calculate_md5(file_path)
+    sha256_hash = calculate_sha256(file_path)
+
+    print(f"MD5: {md5_hash}")
+    print(f"SHA-256: {sha256_hash}")
+except Exception as e:
+    print(f"Error: {str(e)}") 
