@@ -71,3 +71,14 @@ Shembull:
 """
     print(help_message)
 
+arguments = sys.argv[1:]
+
+if len(arguments) != 1:
+    print_help()
+    sys.exit(1)
+
+file_path = arguments[0]
+
+file_name = file_path.split("/")[-1]
+
+print_banner(file_name) 
